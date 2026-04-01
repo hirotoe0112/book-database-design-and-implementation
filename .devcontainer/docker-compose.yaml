@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  book-database-design-and-implementation:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        GIT_NAME: ${GIT_NAME}
+        GIT_EMAIL: ${GIT_EMAIL}
+    tty: true
+    working_dir: /usr/src
+    volumes:
+      - ..:/usr/src:cached
